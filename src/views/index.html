@@ -31,6 +31,12 @@
 <script src="https://cdn.jsdelivr.net/npm/axios@1.1.2/dist/axios.min.js"></script>
 
 <script>
+  // |> axios configuration
+  let axiosConfig = {
+    headers: {
+      authorization: "Bearer " + "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwiZW1haWwiOiJhZG1pbkBhZG1pbi5jb20iLCJpYXQiOjE2OTc1MDM3NjMsImV4cCI6MTY5NzY3NjU2M30.tzfcV5BRdBCrtXm6JhDj2FSlm_9X85NeuMFWlEmPfaw"
+    }
+  }
   // |> exibe os jogos
   axios.get("http://localhost:3000/games").then((response) => {
     let games = response.data;

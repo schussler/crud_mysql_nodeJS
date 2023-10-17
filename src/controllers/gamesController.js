@@ -21,7 +21,7 @@ module.exports = {
   // exibe todos
   async show(req, res) {
     Game.findAll({ raw: true }).then((games) => {
-      res.status(200).send(games)
+      res.status(200).send({/* user: req.loggedUser*/ games: games });
     }).catch((err) => {
       res.status(400).send(`Erro ao carregar: ${err}`)
     });
@@ -35,7 +35,7 @@ module.exports = {
       Game.findOne({ where: { id: id } }).then((game) => {
 
         if (!game) {
-          res.status(400).send('Id nao encontrado')
+          res.status(404).send('Id nao encontrado')
         } else {
           res.status(200).send(game)
         }

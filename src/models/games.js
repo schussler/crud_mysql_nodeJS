@@ -1,6 +1,5 @@
 const { Sequelize } = require('sequelize');
 const database = require('../config/database');
-const sequelize = require('../config/database');
 
 const Game = database.define('Game', {
   name: {
@@ -12,6 +11,6 @@ const Game = database.define('Game', {
     allowNull: false
   }
 });
-sequelize.sync({ alter: true });
+database.sync({ alter: true });
 
 module.exports = Game;
