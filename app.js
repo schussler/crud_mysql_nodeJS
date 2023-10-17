@@ -36,7 +36,7 @@ app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 
 // |> login
-app.post('/login', auth, (req, res) => {
+app.post('/login', (req, res) => {
   let { email, password } = req.body;
   if (email != undefined) {
     User.findOne({ where: { email: email } }).then((user) => {
