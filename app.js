@@ -9,7 +9,7 @@ const userController = require('./src/controllers/userController')
 const app = express();
 app.use(cors())
 
-const JWTsecret = "kskskskskkskskskskskksksksksksk"
+const JWTsecret = "kskskskskkskaskskskskksksksksksk"
 
 //|> middleware refatorar
 function auth(req, res, next) {
